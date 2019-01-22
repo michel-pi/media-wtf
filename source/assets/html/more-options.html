@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>%TITLE% - The most awesome image/file sharing service</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="keywords" content="image, gif, image upload, upload image, upload file, file upload, short, shortener, shortening, url shortener, url short, url shortening, share">
+    <meta name="description" content="Upload images, share your files and shorten your links without any hassle at Media.wtf">
+    <meta name="robots" content="%ROBOTS%">
+    <meta name="author" content="michel-pi">
+
+    <meta property="og:site_name" content="%TITLE%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://media.wtf" />
+    <meta property="og:title" content="%TITLE%" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Upload images, share your files and shorten your links without any hassle at Media.wtf" />
+
+    <meta name="msapplication-TileColor" content="#C00020">
+    <meta name="msapplication-TileImage" content="./../img/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#C00020">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./../img/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./../img/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./../img/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./../img/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./../img/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./../img/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./../img/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./../img/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./../img/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./../img/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./../img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./../img/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./../img/ico/favicon-16x16.png">
+    <link rel="manifest" href="./../img/ico/manifest.json">
+
+    <script defer src="./../fontawesome/all.min.js"></script>
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/media-wtf.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-bg">
+        <div class="container">
+            <a class="nav-link" href="./"><i class="fas fa-home"></i> Home</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item mobile-mt-2"><a class="nav-link" href="./config"><i class="fas fa-file"></i> ShareX config</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./donate"><i class="fas fa-donate"></i> Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4 text-center">
+        <h1>%TITLE%</h1>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header bg-red text-light">
+                        Upload
+                    </div>
+                    <div class="card-body bg-card">
+                        <form action="./formupload" method="POST" enctype="multipart/form-data">
+                            <div class="form-group pb-1">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="file" name="file">
+                                    <label class="custom-file-label" for="file">Drag & Drop</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-upload"></i> Upload</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md mobile-mt-2">
+                <div class="card">
+                    <div class="card-header bg-red text-light">
+                        Shorten
+                    </div>
+                    <div class="card-body bg-card">
+                        <form action="./formshorten" method="POST" enctype="application/x-www-form-urlencoded">
+                            <div class="form-group pb-1">
+                                <input type="url" class="form-control" id="url" name="url" placeholder="https://media.wtf">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-cut"></i> Shorten</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header bg-red text-light">
+                <ul class="nav nav-pills" id="advanced-tab" role="tablist">
+                    <li class="nav-item desktop-mr-2"><a href="#multi-upload-content" class="nav-link active hover-dark" id="multi-upload-tab" data-toggle="pill" role="tab" aria-selected="true" aria-controls="multi-upload-content">Multi Upload</a></li>
+                    <li class="nav-item desktop-mr-2"><a href="#multi-shorten-content" class="nav-link hover-dark" id="multi-shorten-tab" data-toggle="pill" role="tab" aria-selected="false" aria-controls="multi-shorten-content">Multi Shorten</a></li>
+                    <li class="nav-item desktop-mr-2"><a href="#remote-upload-content" class="nav-link hover-dark" id="remote-upload-tab" data-toggle="pill" role="tab" aria-selected="false" aria-controls="remote-upload-content">Remote Upload</a></li>
+                    <li class="nav-item"><a href="#unshorten-content" class="nav-link hover-dark" id="unshorten-tab" data-toggle="pill" role="tab" aria-selected="false" aria-controls="unshorten-content">Unshorten</a></li>
+                </ul>
+            </div>
+            <div class="card-body bg-card">
+                <div class="tab-content" id="advanced-content">
+                    <div class="tab-pane fade show active" id="multi-upload-content" role="tabpanel" aria-labelledby="multi-upload-tab">
+                        <form action="./multiupload" method="POST" enctype="multipart/form-data">
+                            <div class="form-group pb-1">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="files" name="files[]" multiple>
+                                    <label class="custom-file-label" for="files">Drag & Drop</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-upload"></i> Upload</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="multi-shorten-content" role="tabpanel" aria-labelledby="multi-shorten-tab">
+                        <form action="./multishorten" method="POST" enctype="application/x-www-form-urlencoded">
+                            <div class="form-group pb-1">
+                                <textarea type="url" class="form-control" id="urls" name="urls" placeholder="Seperate by comma or new line" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-cut"></i> Shorten</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="remote-upload-content" role="tabpanel" aria-labelledby="remote-upload-tab">
+                        <form action="./remoteupload" method="POST" enctype="application/x-www-form-urlencoded">
+                            <div class="form-group pb-1">
+                                <input type="url" class="form-control" id="remoteurl" name="remoteurl" placeholder="https://media.wtf/image.png">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-globe"></i> Reupload</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="unshorten-content" role="tabpanel" aria-labelledby="unshorten-tab">
+                        <form action="./unshorten" method="POST" enctype="application/x-www-form-urlencoded">
+                            <div class="form-group pb-1">
+                                <input type="url" class="form-control" id="shortenurl" name="shortenurl" placeholder="https://media.wtf/abcdefgh">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-expand-arrows-alt"></i> Unshorten</button>
+                        </form>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pb-2 mt-4">
+        <div class="container pt-4 pb-4 footer-text">
+            <div class="row">
+                <div class="col-lg-6 mobile-text-center">
+                    <h6 class="text-light mb-4 footer-header pt-1 pb-1">ABOUT US</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light">
+                            %TITLE% is a free file sharing and url shortening service.<br />
+                            Our goal is to offer fast loading times and unlimited file size for your uploads.<br />
+                            "No Bullshit" Policy: No Logs, No Google, No Facebook!
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mobile-text-center">
+                    <h6 class="text-light mb-4 footer-header pt-1 pb-1">NAVIGATION</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="./terms">Terms of Service</a></li>
+                        <li><a class="footer-link" href="./privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mobile-text-center">
+                    <h6 class="text-light mb-4 footer-header pt-1 pb-1">IMPORTANT</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="https://getsharex.com/" target="_blank"> Get ShareX</a></li>
+                        <li><a class="footer-link" href="https://github.com/michel-pi" target="_blank">Github</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 mobile-text-center">
+                    <h6 class="text-light mb-4 footer-header pt-1 pb-1">CONTACT</h6>
+                    <ul class="list-unstyled">
+                        <li><a class="footer-link" href="mailto:admin@media.wtf">E-Mail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-light pt-1 pb-1">
+        <div class="text-center text-7">© 2018 %TITLE%. All rights reserved. All other trademarks, logos and copyrights are the property of their respective owners</div>
+    </div>
+
+    <script src="./../js/jquery-3.3.1.min.js"></script>
+    <script src="./../js/popper.min.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/custom-file-input.min.js"></script>
+    <script src="./../js/media-wtf.js"></script>
+</body>
+
+</html>
