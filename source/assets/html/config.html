@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>ShareX Config - %TITLE%</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Want to use the ShareX client to upload to our service? Follow these easy steps to use Media.wtf with your ShareX client!">
+    <meta name="robots" content="%ROBOTS%">
+    <meta name="author" content="michel-pi">
+
+    <meta property="og:site_name" content="%TITLE%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://media.wtf/config" />
+    <meta property="og:title" content="%TITLE%" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Want to use the ShareX client to upload to our service? Follow these easy steps to use Media.wtf with your ShareX client!" />
+
+    <meta name="msapplication-TileColor" content="#C00020">
+    <meta name="msapplication-TileImage" content="./../img/ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#C00020">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./../img/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./../img/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./../img/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./../img/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./../img/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./../img/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./../img/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./../img/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./../img/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./../img/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./../img/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./../img/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./../img/ico/favicon-16x16.png">
+    <link rel="manifest" href="./../img/ico/manifest.json">
+
+    <script defer src="./../fontawesome/all.min.js"></script>
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/media-wtf.css">
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-bg">
+                <div class="container">
+                    <a class="nav-link" href="./"><i class="fas fa-home"></i> Home</a>
+        
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mobile-mt-2"><a class="nav-link" href="./config"><i class="fas fa-file"></i> ShareX config</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./donate"><i class="fas fa-donate"></i> Donate</a></li>
+                    </ul>
+                    </div>  
+                </div>
+            </nav>
+
+            <div class="container mt-4 text-center">
+                <h1>%TITLE%</h1>
+            </div>
+
+            <div class="container mt-4">
+                    <div class="card">
+                            <div class="card-header bg-red text-light">
+                                    <i class="fas fa-question"></i> How to use
+                            </div>
+                            <div class="card-body bg-card text-light">
+                                <ul class="list-styled">
+                                    <li>Open your ShareX window (double click the icon)</li>
+                                    <li>Open "Destinations" on the left side and choose "Custom uploader" for each entry (Image Uploader, Text Uploader...)</li>
+                                    <li>Open "Destinations" on the left side and go to "Destination Settings"</li>
+                                    <li>Scroll down and click on "Custom uploaders"</li>
+                                    <li>Use the "Import" function to import from clipboard, file or url</li>
+                                    <li>Set your Uploaders to the imported one (down-left side)</li>
+                                </ul>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="container mt-4">
+                    <div class="card">
+                            <div class="card-header bg-red text-light">
+                                    <i class="fas fa-upload"></i> Uploader
+                            </div>
+                            <div class="card-body bg-card text-light">
+                                <form>
+                                    <div class="form-group">
+                                        %UPLOADER_CONFIG%
+                                    </div>
+                                </form>
+                                or download the configuration file <a href="./../downloads/media.wtf-uploader.sxcu" download="media.wtf (Uploader).sxcu">here</a>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="container mt-4">
+                    <div class="card">
+                            <div class="card-header bg-red text-light">
+                                    <i class="fas fa-cut"></i> Shortener
+                            </div>
+                            <div class="card-body bg-card text-light">
+                                <form>
+                                    <div class="form-group">
+                                        %SHORTENER_CONFIG%
+                                    </div>
+                                    or download the configuration file <a href="./../downloads/media.wtf-shortener.sxcu" download="media.wtf (Shortener).sxcu">here</a>
+                                </form>
+                            </div>
+                        </div>
+            </div>
+
+            <div class="pb-2 mt-4">
+                    <div class="container pt-4 pb-4 footer-text">
+                        <div class="row">
+                            <div class="col-lg-6 mobile-text-center">
+                                <h6 class="text-light mb-4 footer-header pt-1 pb-1">ABOUT US</h6>
+                                <ul class="list-unstyled">
+                                    <li class="text-light">
+                                            %TITLE% is a free file sharing and url shortening service.<br />
+                                            Our goal is to offer fast loading times and unlimited file size for your uploads.<br />
+                                            "No Bullshit" Policy: No Logs, No Google, No Facebook!
+                                    </li>
+                                </ul>
+                            </div>
+            
+                            <div class="col-lg-2 mobile-text-center">
+                                <h6 class="text-light mb-4 footer-header pt-1 pb-1">NAVIGATION</h6>
+                                <ul class="list-unstyled">
+                                    <li><a class="footer-link" href="./terms">Terms of Service</a></li>
+                                    <li><a class="footer-link" href="./privacy">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+            
+                            <div class="col-lg-2 mobile-text-center">
+                                <h6 class="text-light mb-4 footer-header pt-1 pb-1">IMPORTANT</h6>
+                                <ul class="list-unstyled">
+                                    <li><a class="footer-link" href="https://getsharex.com/" target="_blank"> Get ShareX</a></li>
+                                    <li><a class="footer-link" href="https://github.com/michel-pi" target="_blank">Github</a></li>
+                                </ul>
+                            </div>
+            
+                            <div class="col-lg-2 mobile-text-center">
+                                <h6 class="text-light mb-4 footer-header pt-1 pb-1">CONTACT</h6>
+                                <ul class="list-unstyled">
+                                    <li><a class="footer-link" href="mailto:admin@media.wtf">E-Mail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid text-light pt-1 pb-1">
+                    <div class="text-center text-7">© 2018 %TITLE%. All rights reserved. All other trademarks, logos and copyrights are the property of their respective owners</div>
+                </div>
+
+    <script src="./../js/jquery-3.3.1.min.js"></script>
+    <script src="./../js/popper.min.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="./../js/copy.js"></script>
+</body>
+
+</html>

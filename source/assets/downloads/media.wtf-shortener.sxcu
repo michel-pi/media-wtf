@@ -1,0 +1,11 @@
+﻿{
+  "Name": "media.wtf (Shortener)",
+  "DestinationType": "URLShortener",
+  "RequestURL": "https://media.wtf/shorten",
+  "Arguments": {
+    "url": "$input$"
+  },
+  "URL": "$json:Url$",
+  "ThumbnailURL": "$json:Url$",
+  "DeletionURL": "$json:DeletionUrl$"
+}

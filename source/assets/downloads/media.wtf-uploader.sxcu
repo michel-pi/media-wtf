@@ -1,0 +1,12 @@
+﻿{
+  "Name": "media.wtf (Uploader)",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader",
+  "RequestURL": "https://media.wtf/upload",
+  "FileFormName": "file",
+  "Arguments": {
+    "always_append_extension": "false"
+  },
+  "URL": "$json:Url$",
+  "ThumbnailURL": "$json:ThumbnailUrl$",
+  "DeletionURL": "$json:DeletionUrl$"
+}
